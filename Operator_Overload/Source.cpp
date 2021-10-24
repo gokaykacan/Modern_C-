@@ -16,11 +16,13 @@ class Integer
 public:
     Integer() // constructor
     {
+        cout << "Integer())" << endl;
         mp_Value = new int(0);
     }
 
     Integer(int value) // constructor
     {
+        cout << "Integer(int value)" << endl;
         mp_Value = new int(value);
     }
 
@@ -53,7 +55,7 @@ public:
     Integer& operator=(const Integer& other) //assingment overload
     {
         cout << "Integer & operator=(const Integer& other)" << endl;
-        if (this != &other) // bunu yaparak, kendine eþitlendiðinde deerin yok olmasýný önleriz
+        if (this != &other) // bunu yaparak, kendine eþitlendiðinde degerin yok olmasýný önleriz
         {
             delete mp_Value;
             mp_Value = new int(*other.mp_Value);
@@ -64,7 +66,7 @@ public:
     Integer& operator=(Integer&& other) //move assingment overload
     {
         cout << "Integer & operator=(Integer&& other)" << endl;
-        if (this != &other) // bunu yaparak, kendine eþitlendiðinde deerin yok olmasýný önleriz
+        if (this != &other) // bunu yaparak, kendine eþitlendiðinde degerin yok olmasýný önleriz
         {
             delete mp_Value;
             mp_Value = new int(*other.mp_Value);
