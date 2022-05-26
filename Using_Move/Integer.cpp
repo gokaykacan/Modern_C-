@@ -11,10 +11,10 @@ Integer::Integer(int value) {
 	m_pInt = new int(value);
 }
 
-//Integer::Integer(const Integer & obj) {
-//	std::cout << "Integer(const Integer&)" << std::endl;
-//	m_pInt = new int(*obj.m_pInt);
-//}
+Integer::Integer(const Integer & obj) {
+	std::cout << "Integer(const Integer&)" << std::endl;
+	m_pInt = new int(*obj.m_pInt);
+}
 
 Integer::Integer(Integer && obj) {
 	std::cout << "Integer(int&&)" << std::endl;

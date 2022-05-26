@@ -19,7 +19,8 @@ public:
 	Integer(const Integer& other) //copy constructor
 	{
 		cout << "Integer(const Integer& other)" << endl;
-		delete mpInt;
+		//delete mpInt;
+		//mpInt = new int(*other.mpInt);
 		mpInt = new int(*other.mpInt);
 	}
 	Integer(Integer&& other) // move constructor
@@ -94,6 +95,7 @@ Number CreateNumber(int num)
 	Number n{ num };
 	return n;
 }
+
 int main() {
 
 	cout << "Hello Worlddddd !!! " << endl;
@@ -104,13 +106,13 @@ int main() {
 
 	cout << "--------------------" << endl;
 
-	Number n1{ 5 };
-	auto n2{ n1 };
+	//Number n1{ 5 };
+	//auto n2{ n1 };
 
-	n2 = n1;
+	//n2 = n1;
 
-	auto n3(CreateNumber(4));
-	n3 = CreateNumber(4);
+	//auto n3(CreateNumber(4));
+	//n3 = CreateNumber(4);
 
 	return 0;
 }

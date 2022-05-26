@@ -54,7 +54,7 @@ public:
     Integer& operator=(const Integer& other) //assingment overload
     {
         cout << "Integer & operator=(const Integer& other)" << endl;
-        if (this != &other) // bunu yaparak, kendine eşitlendiğinde deerin yok olmasını önleriz
+        if (this != &other) // bunu yaparak, kendine eşitlendiğinde deegrin yok olmasını önleriz
         {
             delete mp_Value;
             mp_Value = new int(*other.mp_Value);
@@ -65,7 +65,7 @@ public:
     Integer& operator=(Integer&& other) //move assingment overload
     {
         cout << "Integer & operator=(Integer&& other)" << endl;
-        if (this != &other) // bunu yaparak, kendine eşitlendiğinde deerin yok olmasını önleriz
+        if (this != &other) // bunu yaparak, kendine eşitlendiğinde degerin yok olmasını önleriz
         {
             delete mp_Value;
             mp_Value = new int(*other.mp_Value);

@@ -14,7 +14,7 @@ int main()
 	//auto b(std::move(a));
 	//Print(a); //gives compile error since we have closed copy constructor on Integer class
 	Print(std::move(a));
-	a.SetValue(7);
+	//a.SetValue(7);
 
 	return 0;
 }
