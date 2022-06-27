@@ -1,7 +1,9 @@
 #include <iostream>
-//using Comparator = bool(*)(int, int);
+
+//Sort the array
 template<typename T, int size, typename Comparator>
-void Sort(T(&arr)[size], Comparator comp) {
+void Sort(T(&arr)[size], Comparator comp) 
+{
 	for (int i = 0; i < size - 1; ++i) {
 		for (int j = 0; j < size - 1; ++j) {
 			if (comp(arr[j], arr[j + 1])) {
@@ -12,6 +14,20 @@ void Sort(T(&arr)[size], Comparator comp) {
 		}
 	}
 }
+
+//Find the max number of the array
+template<typename T, int size, typename Max>
+int MaxNumber(T(&arr)[size], Max max)
+{
+	int _max = arr[0];
+	for (int i = 1; i < size-1; i++)
+	{
+		if (_max < max(arr[i], arr[i + 1]))
+			_max = max(arr[i], arr[i + 1]);
+	}
+	return _max;
+}
+
 bool Comp(int x, int y) {
 	return x > y;
 }
@@ -77,14 +93,28 @@ int main() {
 			std::cout << x << std::endl;
 		}(x);
 	}(5);
+
+
 	__Unnamed<int> n(3);
 	int x = 5;
 	n(x);
+
+
 	int arr[]{ 1,6,8,4,0 };
 	ForEach(arr, [](auto x) {
 		std::cout << x << " ";
 		});
 	std::cout << std::endl;
+
+	//max number:
+	auto _max = [](auto x, auto y)
+	{
+		return x>y ? x:y;
+	};
+
+	std::cout << "Max: " << MaxNumber(arr, _max) << std::endl;
+	//
+
 	int offset = 0;
 	/*ForEach(arr, [offset](auto &x) {
 		x += offset;
